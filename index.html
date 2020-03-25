@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function calcBMI(weight, height) {
+            if (height < 120 || height > 220)
+                alert('Incorrect height, insert height between 120 cm and 220 cm');
+
+            else if (weight < 30 || height > 200)
+                alert('Incorrect weight, insert weight between 30 kilo and 200 kilo');
+
+            return weight / (height * height) * 10000
+        }
+
+        function checkBMI() {
+            let weight = document.getElementById('weight').value;
+            let height = document.getElementById('height').value;
+            let result;
+            
+            document.getElementById('result').innerHTML =
+                calcBMI(weight, height);
+
+                if (result > 0 && result < 18.5)
+             document.write ('You are underweight \nDegree of disease risk is: Risk of malnutrition')
+        }
+    </script>
+
+    Weight: <input type="text" id="weight" />
+    Height: <input type="text" id="height" />
+    <button type="button" onclick="checkBMI()">
+        Calculate your BMI
+    </button>
+    <p id="result"></p>
+
+</body>
+
+</html>
